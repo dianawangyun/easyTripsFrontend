@@ -1,0 +1,40 @@
+.navbar {
+    background-color: rgba(250, 220, 120, 0.7);
+    box-shadow: 0 1px 2px gray;
+}
+
+.nav-bar-brand {
+    position: relative;
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(77, 233, 168);
+    text-shadow: 1px 1px 2px white;
+}
+.nav-bar-brand:hover {
+    color: rgb(77, 233, 168);
+}
+
+.nav-link {
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(93, 172, 129);
+    text-shadow: 0 0 0.5px grey;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    color: rgb(40, 130, 80);
+    font-weight: 500;
+}
+
+.nav-link:active {
+    color: rgb(40, 130, 80);
+    font-weight: 500;
+}
+
+a.active {
+    color: rgb(40, 130, 80);
+    font-weight: 500;
+    cursor: default;
+}

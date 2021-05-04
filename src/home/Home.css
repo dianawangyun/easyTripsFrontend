@@ -1,0 +1,20 @@
+.home-map {
+    position: relative;
+}
+
+.jumbotron {
+    background-color: transparent;
+}
+
+.home-list {
+    text-align: center;
+}
+
+.home-list ul {
+    width: 300px;
+    transform: translateX(10%);
+}
+
+.home-list ul li {
+    margin-top: 10px;
+}

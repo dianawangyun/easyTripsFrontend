@@ -1,0 +1,36 @@
+.search {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 500px;
+    z-index: 10;
+    list-style-type: none;
+}
+
+.search input {
+    padding: 0.3rem;
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.locate {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: none;
+    border: none;
+    z-index: 10;
+    color: blue;
+    cursor: pointer;
+}
+
+.locate img {
+    width: 50px;
+    height: 50px;
+}
+.locate:hover {
+    color: blue;
+}
