@@ -11,7 +11,6 @@ function LoginForm({ login }) {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        debugger;
         let res = await login(formData);
         if (res.success) {
             history.push("/home");

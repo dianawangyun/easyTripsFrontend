@@ -56,6 +56,22 @@ class EasyTripsApi {
         let res = await this.request(`trip/${username}`, data, "post");
         return res.trip;
     }
+
+    /** get details of a trip */
+    static async getTrip(username, tripId) {
+        let res = await this.request(`trip/${username}/${tripId}`);
+        return res.trip;
+    }
+
+    /** add an activity to a trip */
+    static async addActivity(username, tripid, data) {
+        let res = await this.request(
+            `activity/${username}/${tripid}`,
+            data,
+            "post"
+        );
+        return res.activity;
+    }
 }
 
 export default EasyTripsApi;

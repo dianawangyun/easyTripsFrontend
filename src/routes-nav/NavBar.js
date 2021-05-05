@@ -10,8 +10,6 @@ function NavBar({ logout }) {
     const { currentUser } = useContext(UserContext);
 
     function loggedInNav() {
-        const username = currentUser.username;
-        const myTripsEndpoint = `/${username}/trips`;
         return (
             <>
                 <ul className="navbar-nav mr-auto">
@@ -21,7 +19,7 @@ function NavBar({ logout }) {
                         </NavLink>
                     </li>
                     <li className="nav-item mx-2">
-                        <NavLink className="nav-link" to={myTripsEndpoint}>
+                        <NavLink className="nav-link" to="/trip">
                             My Trips
                         </NavLink>
                     </li>
@@ -72,7 +70,7 @@ function NavBar({ logout }) {
                 Easy Trips
             </Link>
             <button
-                class="custom-toggler navbar-toggler"
+                className="custom-toggler navbar-toggler"
                 type="button"
                 data-toggle="collapse"
                 data-target="#collapseNavbar"
@@ -81,13 +79,15 @@ function NavBar({ logout }) {
                 aria-label="Toggle navigation"
                 onClick={handleNavCollapse}
             >
-                <span class="navbar-toggler-icon">
+                <span className="navbar-toggler-icon">
                     <img src="/hamburger2.png" width="30" height="30" alt="" />
                 </span>
             </button>
 
             <div
-                class={`${isNavCollapsed ? "collapse" : ""} navbar-collapse`}
+                className={`${
+                    isNavCollapsed ? "collapse" : ""
+                } navbar-collapse`}
                 id="collapseNavbar"
             >
                 {currentUser ? loggedInNav() : visitorNav()}

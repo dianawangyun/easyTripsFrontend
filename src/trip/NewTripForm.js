@@ -12,7 +12,6 @@ function NewTripForm({ addTrip }) {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        debugger;
         let res = await addTrip(formData);
         if (res.success) {
             history.push("/home");
@@ -40,6 +39,7 @@ function NewTripForm({ addTrip }) {
                                 className="form-control"
                                 value={formData.tripName}
                                 onChange={handleChange}
+                                autoComplete="off"
                                 required
                                 type="text"
                             />

@@ -15,6 +15,7 @@ export const TOKEN_STORAGE_ID = "easy-trips-token";
 function App() {
     const [infoLoaded, setInfoLoaded] = useState(false);
     const [currentUser, setCurrentUser] = useState(null);
+    const [trips, setTrips] = useState([]);
     const [token, setToken] = useLocalStorage(TOKEN_STORAGE_ID);
 
     useEffect(
@@ -28,6 +29,7 @@ function App() {
                             username
                         );
                         setCurrentUser(currUser);
+                        setTrips(currUser.trips);
                     } catch (e) {
                         setCurrentUser(null);
                     }
@@ -71,7 +73,7 @@ function App() {
             let currUser = await EasyTripsApi.getCurrentUser(
                 currentUser.username
             );
-            setCurrentUser(currUser);
+            setTrips(currUser.trips);
             return { success: true };
         } catch (errs) {
             return { success: false, errs };
@@ -82,7 +84,9 @@ function App() {
 
     return (
         <BrowserRouter>
-            <UserContext.Provider value={{ currentUser, setCurrentUser }}>
+            <UserContext.Provider
+                value={{ currentUser, setCurrentUser, trips }}
+            >
                 <div className="App">
                     <NavBar logout={logout} />
                     <Routes addTrip={addTrip} login={login} signup={signup} />

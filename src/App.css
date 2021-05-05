@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+h1,
+h2 {
+    font-family: "Eczar", serif;
+    color: rgb(255, 120, 100);
+    text-shadow: 0 0 1px rgb(60, 150, 200);
+}
+
 li {
     list-style-type: none;
 }

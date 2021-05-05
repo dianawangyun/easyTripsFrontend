@@ -13,8 +13,8 @@ import Locate from "./Locate";
 
 const libraries = ["places"];
 const mapContainerStyle = {
-    width: "100vw",
-    height: "100vh",
+    width: "60vw",
+    height: "90vh",
 };
 
 const options = {
@@ -55,6 +55,7 @@ function Map() {
     const mapRef = useRef();
     const onMapLoad = useCallback((map) => {
         mapRef.current = map;
+        console.log("mapref.current", mapRef.current);
     }, []);
 
     const panTo = useCallback(({ lat, lng }) => {

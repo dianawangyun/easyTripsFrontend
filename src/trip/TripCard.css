@@ -1,0 +1,14 @@
+.trip-card {
+    background-color: rgba(50, 200, 250, 0.4);
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.trip-card:hover {
+    background-color: rgba(50, 200, 250, 0.6);
+}
+
+.trip-card .card-title {
+    font-size: 28px;
+    text-shadow: 0 0 2px black;
+}

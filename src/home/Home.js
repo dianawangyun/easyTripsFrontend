@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { useHistory, Link } from "react-router-dom";
 import UserContext from "../auth/UserContext";
-// import Map from "../map/Map"
 import "./Home.css";
+import TripList from "../trip/TripList"
 
 function Home() {
-    const { currentUser, trips } = useContext(UserContext);
+    const { currentUser } = useContext(UserContext);
     const history = useHistory();
-
+    
     function goSignup() {
         history.push("/signup");
     }
@@ -42,7 +42,6 @@ function Home() {
         );
     }
     function loggedInHome() {
-        let newTripEndpoint = `/newtrip`;
         return (
             <div className="container">
                 <h2 className="text-center my-4">
@@ -50,10 +49,11 @@ function Home() {
                 </h2>
                 <div className="text-center mt-5">
                     <div className="btn btn-add">
-                        <Link to={newTripEndpoint}>+ Plan New Trip</Link>
+                        <Link to="/newtrip">+ Plan New Trip</Link>
                     </div>
-                    <div className="trip-list mt-5">
-                        <h3>My Trips</h3>
+                    <div className="trip-list my-5">
+                        <h3>My Latest Trips</h3>
+                        <TripList isRecent="true"/>
                     </div>
                 </div>
             </div>

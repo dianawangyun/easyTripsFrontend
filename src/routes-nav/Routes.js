@@ -6,6 +6,8 @@ import ProfileForm from "../profile/ProfileForm";
 import LoginForm from "../auth/LoginForm";
 import SignupForm from "../auth/SignupForm";
 import NewTripForm from "../trip/NewTripForm";
+import Trip from "../trip/Trip";
+import TripDetail from "../trip/TripDetail";
 
 const Routes = ({ login, signup, addTrip }) => {
     return (
@@ -16,7 +18,12 @@ const Routes = ({ login, signup, addTrip }) => {
             <Route exact path="/newtrip">
                 <NewTripForm addTrip={addTrip} />
             </Route>
-
+            <Route exact path="/trip">
+                <Trip />
+            </Route>
+            <Route exact path="/trip/:tripid">
+                <TripDetail />
+            </Route>
             <Route exact path="/profile">
                 <ProfileForm />
             </Route>

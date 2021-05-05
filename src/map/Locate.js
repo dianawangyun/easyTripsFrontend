@@ -16,7 +16,7 @@ function Locate({ panTo }) {
                 );
             }}
         >
-            <img alt="locate me" src="compass.png" title="Locate me" />
+            <img alt="locate me" src="/compass.png" title="Locate me" />
         </button>
     ) : null;
 }

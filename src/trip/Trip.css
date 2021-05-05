@@ -1,0 +1,13 @@
+.trip img {
+    width: 400px;
+}
+
+.trip-img-box {
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+.trip-list-box {
+    height: 600px;
+    overflow-y: auto;
+}
