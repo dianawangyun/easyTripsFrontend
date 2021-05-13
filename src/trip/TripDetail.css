@@ -1,4 +1,10 @@
-.Trip-detail {
+.trip-detail {
     height: 90vh;
     overflow-y: auto;
+}
+
+.trip-edit-btn {
+    position: absolute;
+    right: 30px;
+    top: 10px;
 }

@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 import { useHistory, Link } from "react-router-dom";
 import UserContext from "../auth/UserContext";
 import "./Home.css";
-import TripList from "../trip/TripList"
+import TripList from "../trip/TripList";
 
 function Home() {
+    /* if currentUser is null, renders visitor page. Otherwise, renders user page. */
     const { currentUser } = useContext(UserContext);
     const history = useHistory();
-    
+
     function goSignup() {
         history.push("/signup");
     }
@@ -25,14 +26,14 @@ function Home() {
                     <p className="lead">Here is what this App can do:</p>
                     <div className="home-list">
                         <ul className="text-left mx-auto">
-                            <li>Build your trip plans</li>
-                            <li>Create activities for your trip</li>
-                            <li>Mark on the map for easy reference</li>
+                            <li>Create your trip plans</li>
+                            <li>Add activities for your trip</li>
+                            <li>Markers on real map for easy reference</li>
                             <li>View your saved trips</li>
                         </ul>
                     </div>
                     <button
-                        className="btn btn-outline-success btn-lg"
+                        className="btn btn-outline-success btn-lg mt-3"
                         onClick={goSignup}
                     >
                         Sign Up
@@ -53,7 +54,7 @@ function Home() {
                     </div>
                     <div className="trip-list my-5">
                         <h3>My Latest Trips</h3>
-                        <TripList isRecent="true"/>
+                        <TripList isRecent="true" />
                     </div>
                 </div>
             </div>

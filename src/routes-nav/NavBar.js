@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import UserContext from "../auth/UserContext";
 import "./NavBar.css";
 
+/* Two versions of navbar for visitor and logged in user. */
 function NavBar({ logout }) {
     const [isNavCollapsed, setIsNavCollapsed] = useState(true);
     const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
@@ -58,7 +59,7 @@ function NavBar({ logout }) {
     }
 
     return (
-        <nav className="navbar navbar-expand-md">
+        <nav className="navbar navbar-expand-md sticky-top">
             <Link className="nav-bar-brand mr-4" to="/">
                 <img
                     className="mr-2"

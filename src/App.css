@@ -46,3 +46,13 @@ a:hover {
     background-color: rgb(45, 109, 75);
     color: lightcyan;
 }
+
+.btn-danger-trip {
+    margin-top: 20px;
+    font-weight: 600;
+    box-shadow: 0 0 1px pink;
+}
+
+.fas:hover {
+    cursor: pointer;
+}

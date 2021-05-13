@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
+/* The form for creating a new trip. */
 function NewTripForm({ addTrip }) {
     const history = useHistory();
     const [formData, setFormData] = useState({
@@ -79,7 +80,7 @@ function NewTripForm({ addTrip }) {
                                 className="btn btn-success mb-5"
                                 type="submit"
                             >
-                                Submit
+                                Save
                             </button>
                         </div>
                     </form>

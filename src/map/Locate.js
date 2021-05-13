@@ -1,5 +1,6 @@
 import React from "react";
 
+/* The button to panTo current location on the map. */
 function Locate({ panTo }) {
     return navigator.geolocation ? (
         <button

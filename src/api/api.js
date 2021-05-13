@@ -14,7 +14,7 @@ class EasyTripsApi {
     static token;
 
     static async request(endpoint, data = {}, method = "get") {
-        console.log("API Call:", endpoint, data, method);
+        // console.log("API Call:", endpoint, data, method);
 
         const url = `${BASE_URL}/${endpoint}`;
         const headers = { Authorization: `Bearer ${EasyTripsApi.token}` };
@@ -51,6 +51,12 @@ class EasyTripsApi {
         return res.user;
     }
 
+    /** update user information */
+    static async updateProfile(username, data) {
+        let res = await this.request(`user/${username}`, data, "patch");
+        return res.user;
+    }
+
     /** add a trip to current user */
     static async addTrip(username, data) {
         let res = await this.request(`trip/${username}`, data, "post");
@@ -63,6 +69,16 @@ class EasyTripsApi {
         return res.trip;
     }
 
+    /** update a trip */
+    static async updateTrip(username, tripId, updateData) {
+        let res = await this.request(
+            `trip/${username}/${tripId}`,
+            updateData,
+            "patch"
+        );
+        return res.trip;
+    }
+
     /** add an activity to a trip */
     static async addActivity(username, tripid, data) {
         let res = await this.request(
@@ -71,6 +87,37 @@ class EasyTripsApi {
             "post"
         );
         return res.activity;
+    }
+
+    /** edit an acitivity */
+    static async updateActivity(username, activityId, data) {
+        debugger;
+        let res = await this.request(
+            `activity/${username}/${activityId}`,
+            data,
+            "patch"
+        );
+        return res.activity;
+    }
+
+    /** delete an activity */
+    static async deleteActivity(username, activityId) {
+        let res = await this.request(
+            `activity/${username}/${activityId}`,
+            {},
+            "delete"
+        );
+        return res;
+    }
+
+    /** delete a trip */
+    static async deleteTrip(username, tripId) {
+        let res = await this.request(
+            `trip/${username}/${tripId}`,
+            {},
+            "delete"
+        );
+        return res;
     }
 }
 

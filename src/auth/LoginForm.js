@@ -35,6 +35,7 @@ function LoginForm({ login }) {
                             <input
                                 name="username"
                                 id="login-username"
+                                data-testid="login-username"
                                 className="form-control"
                                 value={formData.username}
                                 onChange={handleChange}
@@ -47,6 +48,7 @@ function LoginForm({ login }) {
                             <input
                                 type="password"
                                 name="password"
+                                data-testid="login-password"
                                 className="form-control"
                                 value={formData.password}
                                 onChange={handleChange}
@@ -64,6 +66,7 @@ function LoginForm({ login }) {
                             <button
                                 className="btn btn-success mb-5"
                                 type="submit"
+                                data-testid="submit"
                             >
                                 Log In
                             </button>
