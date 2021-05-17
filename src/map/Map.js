@@ -26,7 +26,7 @@ const options = {
 function Map({ selectLocation, trip }) {
     const { currLocation } = useContext(UserContext);
     const { isLoaded, loadError } = useLoadScript({
-        googleMapsApiKey: "AIzaSyCMbvToHaCbVpD7-YgWCFUg61QwxN9rla4",
+        googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries,
     });
     const activityMarkers = trip.activities.filter(
