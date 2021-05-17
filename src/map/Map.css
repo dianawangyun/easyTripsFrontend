@@ -1,3 +1,7 @@
+.map-wrapper {
+    overflow: hidden;
+}
+
 .locate {
     position: absolute;
     top: 1rem;

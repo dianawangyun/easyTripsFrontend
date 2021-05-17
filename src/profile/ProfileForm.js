@@ -25,7 +25,6 @@ function ProfileForm() {
         };
 
         let newProfile;
-        debugger;
         try {
             newProfile = await EasyTripsApi.updateProfile(
                 currentUser.username,

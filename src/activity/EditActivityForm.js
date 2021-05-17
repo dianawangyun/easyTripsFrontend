@@ -99,7 +99,7 @@ function EditActivityForm({
     }
 
     return (
-        <div>
+        <div className="mb-3">
             <form
                 onSubmit={handleSubmit}
                 className="activity-add-form p-2 mt-3 ml-3 text-left"
@@ -225,7 +225,6 @@ function EditActivityForm({
                     </button>
                 </div>
             </form>
-            <hr />
         </div>
     );
 }

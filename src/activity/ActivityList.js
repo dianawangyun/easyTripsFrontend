@@ -8,6 +8,7 @@ function ActivityList({ trip, deleteActivity }) {
     const [isEditing, setIsEditing] = useState(false);
 
     if (!trip) return <LoadingSpinner />;
+
     return (
         <div>
             {trip.activities.length ? (

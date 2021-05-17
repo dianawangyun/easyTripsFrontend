@@ -117,7 +117,7 @@ function TripDetail() {
             value={{ selectLocation, setSelectLocation, editActivity }}
         >
             <div className="trip-container">
-                <div className="row">
+                <div className="d-lg-flex flex-lg-row">
                     <div className="col-lg-5 mt-3 trip-detail text-center">
                         {isEditTrip ? (
                             <EditTripForm
@@ -175,7 +175,7 @@ function TripDetail() {
                             </button>
                         </div>
                     </div>
-                    <div className="col-lg-7 mt-1 pl-0 ml-4 ml-lg-0">
+                    <div className="col-lg-7 mt-1 px-0 ml-lg-0">
                         <Map selectLocation={selectLocation} trip={trip} />
                     </div>
                 </div>

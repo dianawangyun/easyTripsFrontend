@@ -5,6 +5,7 @@ import TripCard from "./TripCard";
 /* Based on the isRecent props, show three or all TripCards. */
 function TripList({ isRecent = false }) {
     const { trips } = useContext(UserContext);
+
     if (!trips.length) return <p>No trip so far, let's make a plan.</p>;
 
     let showTrips = trips;

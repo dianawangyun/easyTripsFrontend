@@ -199,7 +199,6 @@ function AddActivityForm({
                     Cancel
                 </button>
             </div>
-            <hr />
         </form>
     );
 }

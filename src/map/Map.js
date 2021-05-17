@@ -15,7 +15,7 @@ import Locate from "./Locate";
 const libraries = ["places"];
 const mapContainerStyle = {
     height: "92vh",
-    width: "58vw",
+    width: "100%",
 };
 
 const options = {
@@ -74,7 +74,7 @@ function Map({ selectLocation, trip }) {
     if (!isLoaded) return <LoadingSpinner />;
 
     return (
-        <div>
+        <div className="map-wrapper">
             <Locate panTo={panTo} />
             <GoogleMap
                 mapContainerStyle={mapContainerStyle}

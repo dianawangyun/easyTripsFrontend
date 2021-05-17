@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="home pt-5"
+    >
+      <div
+        class="jumbotron text-center"
+      >
+        <h1
+          class="display-5"
+        >
+          Welcome, Visitor!
+        </h1>
+        <p
+          class="lead mt-3"
+        >
+          This website is designed for planning your trips conveniently.
+        </p>
+        <hr
+          class="my-4"
+        />
+        <p
+          class="lead"
+        >
+          Here is what this App can do:
+        </p>
+        <div
+          class="home-list"
+        >
+          <ul
+            class="text-left mx-auto"
+          >
+            <li>
+              Create your trip plans
+            </li>
+            <li>
+              Add activities for your trip
+            </li>
+            <li>
+              Markers on real map for easy reference
+            </li>
+            <li>
+              View your saved trips
+            </li>
+          </ul>
+        </div>
+        <button
+          class="btn btn-outline-success btn-lg mt-3"
+        >
+          Sign Up
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
