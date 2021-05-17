@@ -85,13 +85,14 @@ function AddActivityForm({
             </div>
 
             <div className="form-group">
-                <label htmlFor="location">Description: </label>
+                <label htmlFor="description">Description: </label>
                 <input
                     name="description"
                     id="description"
                     className="form-control"
                     value={formData.description}
                     onChange={handleChange}
+                    autoComplete="off"
                     type="text"
                 ></input>
             </div>
@@ -122,7 +123,6 @@ function AddActivityForm({
                         className="form-control"
                         name="location"
                         id="location"
-                        autoComplete="false"
                         onChange={(e) => {
                             setValue(e.target.value);
                             handleChange(e);

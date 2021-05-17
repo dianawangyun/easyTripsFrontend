@@ -166,7 +166,7 @@ function TripDetail() {
                             deleteActivity={deleteActivity}
                         />
                         <hr className="ml-3" />
-                        <div className="mt-3 ml-3">
+                        <div className="mt-3">
                             <button
                                 className="btn btn-outline-danger mb-4"
                                 onClick={deleteTrip}

@@ -4,13 +4,25 @@ import UserContext from "../auth/UserContext";
 import "./Home.css";
 import TripList from "../trip/TripList";
 
-function Home() {
+function Home({ login }) {
     /* if currentUser is null, renders visitor page. Otherwise, renders user page. */
     const { currentUser } = useContext(UserContext);
     const history = useHistory();
 
     function goSignup() {
         history.push("/signup");
+    }
+
+    async function handleGuest(e) {
+        e.preventDefault();
+        const userData = { username: "Guest", password: "123456" };
+        debugger;
+        let res = await login(userData);
+        if (res.success) {
+            history.push("/home");
+        } else {
+            console.log(res.errs);
+        }
     }
 
     function visitorHome() {
@@ -23,20 +35,40 @@ function Home() {
                         conveniently.
                     </p>
                     <hr className="my-4" />
-                    <p className="lead">Here is what this App can do:</p>
+                    <p className="lead font-weight-bold text-success">
+                        Here is what this App can do:
+                    </p>
                     <div className="home-list">
                         <ul className="text-left mx-auto">
-                            <li>Create your trip plans</li>
-                            <li>Add activities for your trip</li>
-                            <li>Markers on real map for easy reference</li>
-                            <li>View your saved trips</li>
+                            <li>
+                                <i className="far fa-clipboard mr-2"></i>Create
+                                your trip plans
+                            </li>
+                            <li>
+                                <i className="fab fa-telegram-plane mr-2"></i>
+                                Add activities to your trip
+                            </li>
+                            <li>
+                                <i className="fas fa-map-marker-alt mr-2"></i>
+                                Markers on real map for easy reference
+                            </li>
+                            <li>
+                                <i className="fas fa-book mr-2"></i>View your
+                                saved trips
+                            </li>
                         </ul>
                     </div>
                     <button
-                        className="btn btn-outline-success btn-lg mt-3"
+                        className="btn btn-success btn-lg mt-3 mr-5"
                         onClick={goSignup}
                     >
                         Sign Up
+                    </button>
+                    <button
+                        className="btn btn-outline-primary btn-lg mt-3"
+                        onClick={handleGuest}
+                    >
+                        Try As Guest
                     </button>
                 </div>
             </div>

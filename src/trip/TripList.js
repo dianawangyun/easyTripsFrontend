@@ -6,7 +6,10 @@ import TripCard from "./TripCard";
 function TripList({ isRecent = false }) {
     const { trips } = useContext(UserContext);
 
-    if (!trips.length) return <p>No trip so far, let's make a plan.</p>;
+    if (!trips.length)
+        return (
+            <p className="text-center">No trip so far, let's make a plan.</p>
+        );
 
     let showTrips = trips;
 

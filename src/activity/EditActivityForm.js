@@ -82,6 +82,7 @@ function EditActivityForm({
         if (res.success) {
             setIsEditing(false);
             setIsUpdating(false);
+            setSelectLocation(null);
         } else {
             setFormErrors(res.errs);
         }

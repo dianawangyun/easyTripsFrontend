@@ -26,7 +26,8 @@ https://github.com/dianawangyun/easyTripsBackend
    4. run `nodemon Server.js` to start the server.
 2. Frontend:
    1. Open a command line console, cd to the folder of this app,  runs `npm i` in the command line console to install the dependencies.
-   2. run `npm start` to start the server
+   2. replace the googleMapsApiKey value with your API key in Map.js (line 29)
+   3. run `npm start` to start the server
 3. Access the app via a browser
    1. Open Chrome or other browser, type in "localhost:3000" in the address bar.
    2. Start planning your trip.

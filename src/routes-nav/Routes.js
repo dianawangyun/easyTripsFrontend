@@ -13,7 +13,7 @@ const Routes = ({ login, signup, addTrip }) => {
     return (
         <Switch>
             <Route exact path="/home">
-                <Home />
+                <Home login={login} />
             </Route>
             <Route exact path="/newtrip">
                 <NewTripForm addTrip={addTrip} />
