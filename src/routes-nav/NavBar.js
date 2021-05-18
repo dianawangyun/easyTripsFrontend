@@ -25,12 +25,16 @@ function NavBar({ logout }) {
                         </NavLink>
                     </li>
                 </ul>
+
                 <ul className="navbar-nav ml-auto">
-                    <li className="nav-item mx-2">
-                        <NavLink className="nav-link" to="/Profile">
-                            Profile
-                        </NavLink>
-                    </li>
+                    {currentUser.username === "Guest" ? null : (
+                        <li className="nav-item mx-2">
+                            <NavLink className="nav-link" to="/Profile">
+                                Profile
+                            </NavLink>
+                        </li>
+                    )}
+
                     <li className="nav-item mx-2">
                         <Link className="nav-link" to="/" onClick={logout}>
                             Log Out
