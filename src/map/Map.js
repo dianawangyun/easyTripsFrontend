@@ -29,6 +29,7 @@ function Map({ selectLocation, trip }) {
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries,
     });
+
     const activityMarkers = trip.activities.filter(
         (a) => a.latitude && a.longitude
     );
