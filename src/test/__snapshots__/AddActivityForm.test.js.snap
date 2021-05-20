@@ -27,11 +27,12 @@ exports[`matches snapshot 1`] = `
       class="form-group"
     >
       <label
-        for="location"
+        for="description"
       >
         Description: 
       </label>
       <input
+        autocomplete="off"
         class="form-control"
         id="description"
         name="description"
@@ -56,7 +57,6 @@ exports[`matches snapshot 1`] = `
           aria-controls="listbox--3"
           aria-expanded="false"
           aria-haspopup="listbox"
-          autocomplete="false"
           class="form-control"
           data-reach-combobox-input=""
           data-state="idle"

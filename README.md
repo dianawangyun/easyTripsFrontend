@@ -21,13 +21,20 @@ https://github.com/dianawangyun/easyTripsBackend
 
 1. Backend: 
    1. Open a command line console, cd to the folder of this app,  run `npm i` in the command line console to install the dependencies.
-   2. make sure postgreSQL is installed and setup (if not please download and install [postgreSQL](https://www.postgresql.org/download/) first)
-   3. run `psql -f -easyTrips.sql` (for windows user) to initialize the database.
-   4. run `nodemon Server.js` to start the server.
+   2. Make sure postgreSQL is installed and setup (if not please download and install [postgreSQL](https://www.postgresql.org/download/) first).
+   3. Run `psql -f -easytrips.sql` (for windows user) to initialize the database.
+   4. Run `npm start` to start the server.
 2. Frontend:
-   1. Open a command line console, cd to the folder of this app,  runs `npm i` in the command line console to install the dependencies.
-   2. replace the googleMapsApiKey value with your API key in Map.js (line 29)
-   3. run `npm start` to start the server
-3. Access the app via a browser
+   1. Open a command line console, cd to the folder of this app,  run `npm i` in the command line console to install the dependencies.
+   2. replace the googleMapsApiKey value with your API key in Map.js (line 29).
+   3. Run `npm start` to start the server.
+3. Access the app via a browser:
    1. Open Chrome or other browser, type in "localhost:3000" in the address bar.
    2. Start planning your trip.
+
+## **Test**
+
+The following works for both Backend and Frontend:
+
+1.  Open a command line console, cd to the folder of frontend or backend.
+2.  Run `npm test`.

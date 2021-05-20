@@ -23,22 +23,23 @@ const options = {
     zoomControl: true,
 };
 
-function Map({ selectLocation, trip }) {
+function Map({ selectLocation, activityMarkers }) {
     const { currLocation } = useContext(UserContext);
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries,
     });
 
-    const activityMarkers = trip.activities.filter(
-        (a) => a.latitude && a.longitude
-    );
-
     const [center, setCenter] = useState({});
 
     /* set the center of map */
     useEffect(() => {
-        if (currLocation) {
+        if (activityMarkers) {
+            setCenter({
+                lat: parseFloat(activityMarkers[0].latitude),
+                lng: parseFloat(activityMarkers[0].longitude),
+            });
+        } else if (currLocation) {
             setCenter({
                 lat: currLocation.lat,
                 lng: currLocation.lng,
@@ -49,7 +50,7 @@ function Map({ selectLocation, trip }) {
                 lng: -97.7,
             });
         }
-    }, [setCenter, currLocation]);
+    }, [activityMarkers, setCenter, currLocation]);
 
     /* if there is a selected location, panTo this location */
     useEffect(() => {
@@ -79,7 +80,7 @@ function Map({ selectLocation, trip }) {
             <Locate panTo={panTo} />
             <GoogleMap
                 mapContainerStyle={mapContainerStyle}
-                zoom={12}
+                zoom={10}
                 center={center}
                 options={options}
                 onLoad={onMapLoad}

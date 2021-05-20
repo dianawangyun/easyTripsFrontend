@@ -112,6 +112,10 @@ function TripDetail() {
 
     if (!trip) return <LoadingSpinner />;
 
+    const activityMarkers = trip.activities.filter(
+        (a) => a.latitude && a.longitude
+    );
+
     return (
         <TripContext.Provider
             value={{ selectLocation, setSelectLocation, editActivity }}
@@ -176,7 +180,11 @@ function TripDetail() {
                         </div>
                     </div>
                     <div className="col-lg-7 mt-1 px-0 ml-lg-0">
-                        <Map selectLocation={selectLocation} trip={trip} />
+                        <Map
+                            selectLocation={selectLocation}
+                            trip={trip}
+                            activityMarkers={activityMarkers}
+                        />
                     </div>
                 </div>
             </div>

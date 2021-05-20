@@ -23,7 +23,7 @@ exports[`matches snapshot 1`] = `
           class="my-4"
         />
         <p
-          class="lead"
+          class="lead font-weight-bold text-success"
         >
           Here is what this App can do:
         </p>
@@ -34,23 +34,40 @@ exports[`matches snapshot 1`] = `
             class="text-left mx-auto"
           >
             <li>
+              <i
+                class="far fa-clipboard mr-2"
+              />
               Create your trip plans
             </li>
             <li>
-              Add activities for your trip
+              <i
+                class="fab fa-telegram-plane mr-2"
+              />
+              Add activities to your trip
             </li>
             <li>
+              <i
+                class="fas fa-map-marker-alt mr-2"
+              />
               Markers on real map for easy reference
             </li>
             <li>
+              <i
+                class="fas fa-book mr-2"
+              />
               View your saved trips
             </li>
           </ul>
         </div>
         <button
-          class="btn btn-outline-success btn-lg mt-3"
+          class="btn btn-success btn-lg mt-3 mr-5"
         >
           Sign Up
+        </button>
+        <button
+          class="btn btn-outline-primary btn-lg mt-3"
+        >
+          Try As Guest
         </button>
       </div>
     </div>
