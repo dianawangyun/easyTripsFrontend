@@ -98,7 +98,7 @@ function AddActivityForm({
             </div>
 
             <div className="form-group">
-                <label htmlFor="location">Location: </label>
+                <label htmlFor="location">*Location: </label>
                 <Combobox
                     onSelect={async (address) => {
                         setValue(address, false);

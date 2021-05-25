@@ -45,11 +45,34 @@ function ActivityCard({
     const ShowActivityComp = (
         <li key={activityId} className="ml-3 mb-2 text-left list-group-item">
             <h5 className="card-title">{activityName}</h5>
-            <div>Description: {description}</div>
-            <div>Location: {location}</div>
-            <div>Start Time: {startTime}</div>
-            <div>End Time: {endTime}</div>
-            <div>Comment: {comment}</div>
+            {description ? (
+                <div>
+                    <strong>Description: </strong>
+                    {description}
+                </div>
+            ) : null}
+            <div>
+                <strong>Location: </strong>
+                {location}
+            </div>
+            {startTime ? (
+                <div>
+                    <strong>Start Time: </strong>
+                    {startTime}
+                </div>
+            ) : null}
+            {endTime ? (
+                <div>
+                    <strong>End Time: </strong>
+                    {endTime}
+                </div>
+            ) : null}
+            {comment ? (
+                <div>
+                    <strong>Comment: </strong>
+                    {comment}
+                </div>
+            ) : null}
 
             {isEditing ? null : (
                 <div className="operations text-right">

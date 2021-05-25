@@ -89,6 +89,7 @@ function TripDetail() {
         try {
             await EasyTripsApi.deleteActivity(currentUser.username, activityId);
             setTrip(await EasyTripsApi.getTrip(currentUser.userId, tripid));
+            setSelectLocation(null);
             return { success: true };
         } catch (errs) {
             return { success: false, errs };

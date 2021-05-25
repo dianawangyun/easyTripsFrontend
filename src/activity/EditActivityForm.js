@@ -73,18 +73,12 @@ function EditActivityForm({
     async function handleSubmit(e) {
         e.preventDefault();
         let submitData = formData;
-        if (submitData.startTime) {
-            submitData.startTime = submitData.startTime.replace("T", " ");
-        }
 
-        if (submitData.endTime) {
-            submitData.endTime = submitData.endTime.replace("T", " ");
+        if (submitData.startTime === "" || submitData.startTime === null) {
+            delete submitData.startTime;
         }
-
-        for (let k in submitData) {
-            if (submitData[k] === "") {
-                delete submitData[k];
-            }
+        if (submitData.endTime === "" || submitData.endTime === null) {
+            delete submitData.endTime;
         }
 
         let res = await editActivity(activityId, submitData);
@@ -129,7 +123,18 @@ function EditActivityForm({
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="location">Location: </label>
+                    <label htmlFor="location">Description: </label>
+                    <input
+                        name="description"
+                        id="description"
+                        className="form-control"
+                        value={formData.description}
+                        onChange={handleChange}
+                        type="text"
+                    ></input>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="location">*Location: </label>
                     <Combobox
                         onSelect={async (address) => {
                             setValue(address, false);
@@ -206,12 +211,12 @@ function EditActivityForm({
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="location">Description: </label>
+                    <label htmlFor="comment">Comment: </label>
                     <input
-                        name="description"
-                        id="description"
+                        name="comment"
+                        id="comment"
                         className="form-control"
-                        value={formData.description}
+                        value={formData.comment}
                         onChange={handleChange}
                         type="text"
                     ></input>
