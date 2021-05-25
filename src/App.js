@@ -92,7 +92,7 @@ function App() {
 
     if (!infoLoaded)
         return (
-            <div className="container mx-auto mt-5">
+            <div className="container d-flex justify-content-center mt-5">
                 <LoadingSpinner />
             </div>
         );

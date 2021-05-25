@@ -16,7 +16,6 @@ function Home({ login }) {
     async function handleGuest(e) {
         e.preventDefault();
         const userData = { username: "Guest", password: "123456" };
-        debugger;
         let res = await login(userData);
         if (res.success) {
             history.push("/home");

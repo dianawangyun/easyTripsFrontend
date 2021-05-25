@@ -110,11 +110,12 @@ function TripDetail() {
         }
     }
 
-    if (!trip) return <LoadingSpinner />;
-
-    const activityMarkers = trip.activities.filter(
-        (a) => a.latitude && a.longitude
-    );
+    if (!trip)
+        return (
+            <div className="container d-flex justify-content-center mt-5">
+                <LoadingSpinner />
+            </div>
+        );
 
     return (
         <TripContext.Provider
@@ -180,11 +181,7 @@ function TripDetail() {
                         </div>
                     </div>
                     <div className="col-lg-7 mt-1 px-0 ml-lg-0">
-                        <Map
-                            selectLocation={selectLocation}
-                            trip={trip}
-                            activityMarkers={activityMarkers}
-                        />
+                        <Map selectLocation={selectLocation} trip={trip} />
                     </div>
                 </div>
             </div>

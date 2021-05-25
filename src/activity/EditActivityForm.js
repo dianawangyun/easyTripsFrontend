@@ -72,13 +72,22 @@ function EditActivityForm({
 
     async function handleSubmit(e) {
         e.preventDefault();
-        if (formData.startTime) {
-            formData.startTime = formData.startTime.replace("T", " ");
+        let submitData = formData;
+        if (submitData.startTime) {
+            submitData.startTime = submitData.startTime.replace("T", " ");
         }
-        if (formData.endTime) {
-            formData.endTime = formData.endTime.replace("T", " ");
+
+        if (submitData.endTime) {
+            submitData.endTime = submitData.endTime.replace("T", " ");
         }
-        let res = await editActivity(activityId, formData);
+
+        for (let k in submitData) {
+            if (submitData[k] === "") {
+                delete submitData[k];
+            }
+        }
+
+        let res = await editActivity(activityId, submitData);
         if (res.success) {
             setIsEditing(false);
             setIsUpdating(false);
@@ -152,8 +161,10 @@ function EditActivityForm({
                                 handleChange(e);
                             }}
                             disabled={!ready}
-                            type="search"
+                            type="text"
                             placeholder="Enter an address"
+                            autoComplete="off"
+                            required
                         />
                         <ComboboxPopover>
                             <ComboboxList>

@@ -23,7 +23,7 @@ const options = {
     zoomControl: true,
 };
 
-function Map({ selectLocation, activityMarkers }) {
+function Map({ selectLocation, trip }) {
     const { currLocation } = useContext(UserContext);
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -34,7 +34,10 @@ function Map({ selectLocation, activityMarkers }) {
 
     /* set the center of map */
     useEffect(() => {
-        if (activityMarkers) {
+        const activityMarkers = trip.activities.filter(
+            (a) => a.latitude && a.longitude
+        );
+        if (activityMarkers.length) {
             setCenter({
                 lat: parseFloat(activityMarkers[0].latitude),
                 lng: parseFloat(activityMarkers[0].longitude),
@@ -50,7 +53,7 @@ function Map({ selectLocation, activityMarkers }) {
                 lng: -97.7,
             });
         }
-    }, [activityMarkers, setCenter, currLocation]);
+    }, [trip.activities, setCenter, currLocation]);
 
     /* if there is a selected location, panTo this location */
     useEffect(() => {
@@ -74,6 +77,10 @@ function Map({ selectLocation, activityMarkers }) {
 
     if (loadError) return "Error loading maps";
     if (!isLoaded) return <LoadingSpinner />;
+
+    const activityMarkers = trip.activities.filter(
+        (a) => a.latitude && a.longitude
+    );
 
     return (
         <div className="map-wrapper">

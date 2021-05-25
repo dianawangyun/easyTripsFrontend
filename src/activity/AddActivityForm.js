@@ -128,8 +128,10 @@ function AddActivityForm({
                             handleChange(e);
                         }}
                         disabled={!ready}
-                        type="search"
+                        type="text"
                         placeholder="Enter an address"
+                        autoComplete="off"
+                        required
                     />
                     <ComboboxPopover>
                         <ComboboxList>

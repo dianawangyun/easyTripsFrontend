@@ -91,7 +91,6 @@ class EasyTripsApi {
 
     /** edit an acitivity */
     static async updateActivity(username, activityId, data) {
-        debugger;
         let res = await this.request(
             `activity/${username}/${activityId}`,
             data,
