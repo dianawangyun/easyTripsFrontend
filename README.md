@@ -40,7 +40,7 @@ https://github.com/dianawangyun/easyTripsBackend
 
 2. Click on one of the trips to check details, make updates to the trip and add activities.
 
-<img src="https://live.staticflickr.com/65535/51487054711_f5a8ddc13a_o.gif" width="800" height="379" alt="newActivity">
+<img src="https://live.staticflickr.com/65535/51488684214_49c09b9b76_o.jpg" width="1024" height="487" alt="Activity">
 
 ## **Test**
 
