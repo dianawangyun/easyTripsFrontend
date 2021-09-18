@@ -11,10 +11,13 @@
 }
 
 .home-list ul {
-    width: 300px;
-    transform: translateX(10%);
+    max-width: 300px;
 }
 
 .home-list ul li {
     margin-top: 10px;
+}
+
+.lead {
+    font-size: 22px;
 }

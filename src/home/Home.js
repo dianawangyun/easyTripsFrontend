@@ -37,7 +37,7 @@ function Home({ login }) {
                     <p className="lead font-weight-bold text-success">
                         Here is what this App can do:
                     </p>
-                    <div className="home-list">
+                    <div className="home-list row">
                         <ul className="text-left mx-auto">
                             <li>
                                 <i className="far fa-clipboard mr-2"></i>Create

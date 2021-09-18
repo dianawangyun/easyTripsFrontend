@@ -42,6 +42,7 @@ class EasyTripsApi {
     /** passing in username and password to get token */
     static async login(data) {
         let res = await this.request("auth/token", data, "post");
+        debugger;
         return res.token;
     }
 

@@ -8,7 +8,7 @@ This is the frontend part, for the backend part please refer to the following ur
 
 https://github.com/dianawangyun/easyTripsBackend
 
-## Technology stacks used:
+## Tech Stacks
 
 - 3rd party API: Google Places, Geocoding and Maps JavaScript API, Use Places Autocomplete.
 - Frontend: Create React App, Bootstrap, JSON Web Tokens
@@ -31,6 +31,16 @@ https://github.com/dianawangyun/easyTripsBackend
 3. Access the app via a browser:
    1. Open Chrome or other browser, type in "localhost:3000" in the address bar.
    2. Start planning your trip.
+
+## How to Use
+
+1. Once logged in, the user can check and add new trips.
+
+<img src="https://live.staticflickr.com/65535/51487985590_69ac938f24_o.gif" width="640" height="480" alt="newTrip">
+
+2. Click on one of the trips to check details, make updates to the trip and add activities.
+
+<img src="https://live.staticflickr.com/65535/51487054711_f5a8ddc13a_o.gif" width="800" height="379" alt="newActivity">
 
 ## **Test**
 
