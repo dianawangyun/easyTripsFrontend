@@ -13,7 +13,7 @@ function Trip() {
                 </div>
             </div>
             <div className="trip-img-box col-lg-3">
-                <img src="/plane.png" alt="" class="img-fluid" />
+                <img src="/plane.png" alt="" className="img-fluid" />
             </div>
         </div>
     );

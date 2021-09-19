@@ -1,15 +1,25 @@
 .trip img {
-    max-width: 95%;
+    padding: 20px;
     height: auto;
     display: block;
 }
 
 .trip-img-box {
-    margin-top: 100px;
-    margin-left: 20px;
+    display: block;
+    max-width: 500px;
+    margin: 20px;
+    margin-top: 80px;
 }
 
 .trip-list-box {
     max-height: 600px;
     overflow-y: auto;
+}
+
+@media screen and (max-width: 992px) {
+    .trip-img-box {
+        max-width: 40vm;
+        margin: auto;
+        margin-top: 50px;
+    }
 }
